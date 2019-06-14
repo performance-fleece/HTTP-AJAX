@@ -18,9 +18,7 @@ class App extends React.Component {
         <header className="App-header">
           <div className="list-wrapper">
             <Route exact path="/" component={FriendsList} />
-            <Link to="/add">
-              <button>Add Friend</button>
-            </Link>
+            
             <Route exact path="/add" component={FriendInput} />
           </div>
         </header>
