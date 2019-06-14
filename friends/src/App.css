@@ -37,3 +37,18 @@
   flex-direction: row;
   width: 200px;
 }
+
+.friend-wrapper {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.friend-wrapper button {
+  margin-left: 10px;
+}
+
+.friends-container a {
+  text-decoration: none;
+  color: white;
+}

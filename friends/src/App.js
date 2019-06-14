@@ -1,47 +1,32 @@
-import React from 'react';
+import React from "react";
+import { Route, Link } from 'react-router-dom';
 // import logo from './logo.svg';
-import axios from 'axios';
-import './App.css';
-import FriendsList from './components/FriendsList';
+import "./App.css";
+import FriendsList from "./components/FriendsList";
+import FriendInput from './components/FriendInput';
+import Friend from "./components/Friend";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      friends: []
-    };
-  }
+  
 
-  componentDidMount() {
-    console.log('CDM start')
-    axios
-      .get("http://localhost:5000/friends")
-      .then(res => {
-        this.setState({ friends: res.data })
-      })
-      .catch(err => console.log("fetch error", err));
-  }
+  
+  
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            PlaceHolder
-
-          </p>
-
-          <div className='list-wrapper'>
-             <FriendsList friends={this.state.friends} />
-            
-
+          <div className="list-wrapper">
+            <Route exact path="/" component={FriendsList} />
+            <Link to="/add">
+              <button>Add Friend</button>
+            </Link>
+            <Route exact path="/add" component={FriendInput} />
           </div>
         </header>
       </div>
     );
   }
 }
-
-
 
 export default App;
