@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+
 
 const Friend = props => {
-    console.log(props.data)
+  const id = props.friend.id;
     return (
       <div className="friend-wrapper">
         <li>
           Name: {props.friend.name} Age: {props.friend.age} Email:{" "}
           {props.friend.email}
         </li>
-        <button>Delete</button>
+        <button onClick={() => props.deleteFriend(id)}>Delete</button>
       </div>
     );
 }

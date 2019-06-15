@@ -15,7 +15,7 @@ class FriendInput extends React.Component {
   submitHandler = () => {
       const { age, name, email } = this.state
       const newFriend = { age, name, email };
-      const saveFriend = axios.post("http://localhost:5000/friends", newFriend)
+      axios.post("http://localhost:5000/friends", newFriend)
         .then( res => {
             this.props.history.push('/');
         })

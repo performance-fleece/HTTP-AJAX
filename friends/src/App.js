@@ -20,6 +20,7 @@ class App extends React.Component {
             <Route exact path="/" component={FriendsList} />
             
             <Route exact path="/add" component={FriendInput} />
+            <Route path="friends/:id" component={Friend} />
           </div>
         </header>
       </div>

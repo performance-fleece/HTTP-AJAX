@@ -32,10 +32,13 @@
   }
 }
 
+
+
 .friend-input form {
   display: flex;
   flex-direction: row;
-  width: 200px;
+  width: 900px;
+  justify-content: center
 }
 
 .friend-wrapper {

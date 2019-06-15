@@ -25,14 +25,24 @@ class FriendsList extends React.Component {
       .catch(err => console.log("fetch error", err));
   }
 
-
+  deleteFriend = id => {
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+        .then(response => {
+          console.log(response);
+          this.setState({ friends: response.data})
+          this.props.history.push('/');
+        })
+        .catch(err => { console.log(err);
+        });
+  };
 
 
   render() {
     return (
       <div className="friends-container">
         {this.state.friends.map(friend => (
-          <FriendDetails key={friend.id} friend={friend} />
+          <Friend key={friend.id} friend={friend} deleteFriend={this.deleteFriend} />
         ))}
         <Link to="/add">
           <button>Add Friend</button>
@@ -42,13 +52,7 @@ class FriendsList extends React.Component {
   }
 }
 
-function FriendDetails({ friend }) {
-    return (
-        <Link to={`/friends/${friend.id}`}>
-            <Friend friend={friend} />
-        </Link>
-    )
-}
+
 
 
 export default FriendsList;
