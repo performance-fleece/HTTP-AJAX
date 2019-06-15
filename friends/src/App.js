@@ -19,7 +19,7 @@ class App extends React.Component {
           <div className="list-wrapper">
             <Route exact path="/" component={FriendsList} />
             
-            <Route exact path="/add" component={FriendInput} />
+            <Route exact path="/update" component={FriendInput} />
             <Route path="friends/:id" component={Friend} />
           </div>
         </header>

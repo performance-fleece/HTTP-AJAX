@@ -44,7 +44,13 @@ class FriendsList extends React.Component {
         {this.state.friends.map(friend => (
           <Friend key={friend.id} friend={friend} deleteFriend={this.deleteFriend} />
         ))}
-        <Link to="/add">
+        <Link to={{
+          pathname: "/update",
+          state: { 
+            updateType: "add"
+          }
+        }}
+          >
           <button>Add Friend</button>
         </Link>
       </div>
